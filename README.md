@@ -19,10 +19,20 @@ Sector Fatehabad. Each station reports 24 variables: PM2.5, PM10, NO, NO2,
 NOx, NH3, SO2, CO, Ozone, BTX compounds, and meteorological data (temperature,
 relative humidity, wind speed/direction, rainfall, solar radiation, pressure).
 
-> The full raw dataset (~96 MB) is not included in this repo. A 30-day
-> sample is provided at `data/aq_sample.csv` for quick inspection; the ETL
-> script in `src/etl.py` regenerates the full cleaned dataset from the raw
-> export.
+> **On data files in this repo:** neither the raw Excel export (~96 MB) nor
+> the full cleaned dataset (`data/aq_wide.parquet`, 70,128 hourly rows,
+> 2017–2024 — this is what the models below were actually trained on) is
+> committed to git, since both are too large/heavy for a code repo.
+> `data/aq_sample.csv` is only the **last 30 days** (721 rows) of the
+> cleaned data, included purely as a quick-look preview of the schema.
+>
+> To regenerate the full cleaned dataset yourself, run:
+> ```bash
+> python src/etl.py --input path/to/your/raw_stations_export.xlsx --outdir data
+> ```
+> This recreates `data/aq_wide.parquet` locally, which `notebooks/01_eda.ipynb`,
+> `src/train_xgboost.py`, `src/train_lstm.py`, and `app/dashboard.py` all
+> read from.
 
 ## Approach
 
