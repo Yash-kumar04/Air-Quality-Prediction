@@ -1,0 +1,6 @@
+data/aq_wide.parquet
+raw.xlsx
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
