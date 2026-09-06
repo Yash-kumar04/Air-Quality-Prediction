@@ -4,8 +4,6 @@ Scalable forecasting system integrating CPCB sensor data and meteorological
 variables to predict PM2.5 and identify pollution hotspots across 11 Delhi
 monitoring stations.
 
-**Society of Civil Engineers, IIT Kanpur** — Jun'25 – Aug'25
-
 ## Objective
 Build a scalable forecasting system integrating CPCB sensors and
 meteorological datasets to predict air pollution levels and surface
